@@ -1,5 +1,12 @@
 from random import *
 
+def printWithAddLength(string,number):
+    s = string
+    offset = number - len(s)
+    for _ in range(offset):
+        s+=" "
+    print(s,end = " ")
+
 class Number:
 
     def __init__(self):
@@ -59,9 +66,11 @@ class Function:
             self.xs.append(randint(-10, 10))
 
     def __str__(self):
-        return f"y = {self.x} {self.sign} {self.b} \n   x = {self.xs}"
+        return f"y = {self.x} {self.sign} {self.b}"
 
 
 n = 20
 for x in range(n):
-    print(Function(3))
+    f = Function(3)
+    printWithAddLength(str(f),15)
+    print(f"x={f.xs}")
